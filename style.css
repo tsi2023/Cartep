@@ -1,0 +1,358 @@
+/* ========================= */
+/* Style général de la page */
+/* ========================= */
+
+body {
+    font-family: 'Open Sans';
+    /* Police utilisée dans toute la page */
+
+    display: flex;
+    /* Utilise Flexbox pour le placement */
+
+    justify-content: center;
+    /* Centre horizontalement le contenu */
+
+    align-items: flex-start;
+    /* Aligne le contenu en haut */
+
+    height: 100vh;
+    /* Hauteur égale à la fenêtre du navigateur */
+
+    margin: 0;
+    /* Supprime les marges par défaut */
+
+    /* Image de fond */
+    background-image: url("arriere-plans-de-bureau-aube-autriche-brouillard-1323550.jpg");
+
+    /* Empêche la répétition de l'image */
+    /* background-repeat: no-repeat;*/
+
+    /* Centre l'image */
+    background-position: center;
+
+    /* L'image couvre toute la fenêtre */
+    background-size: cover;
+}
+
+
+/* ========================= */
+/* Conteneur principal */
+/* ========================= */
+
+.container {
+    text-align: center;
+    /* Centre le texte et les éléments internes */
+}
+
+
+/* ========================= */
+/* Image/logo */
+/* ========================= */
+
+.logo {
+    margin-top: 50px;
+    /* Espace au-dessus du logo */
+
+    width: 380px;
+    /* Largeur de l'image */
+
+    margin-bottom: 0px;
+    /* Espace sous l'image */
+
+    display: block;
+    /* L'image devient un élément bloc */
+
+    margin-left: auto;
+    /* Centre horizontalement */
+
+    margin-right: auto;
+    /* Centre horizontalement */
+    
+    transition: transform 0.6s ease, margin 0.6s ease;
+    /*animer doucement les changements de taille et de position*/
+}
+
+
+/* ========================= */
+/* Compte à rebours */
+/* ========================= */
+
+.countdown {
+    display: inline-block;
+    /*indique que la largeur du compteur doit s'adapter uniquement à son contenu.*/
+    font-size: 4rem;
+    /* Taille du texte */
+
+    background: orchid;
+    /* Fond */
+
+    padding: 10px 20px;
+    /* Marges intérieures */
+
+    border-radius: 35px;
+    /* Coins arrondis */
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 1);
+    /* Ombre portée */
+
+    transition: transform 0.6s ease, margin 0.6s ease;
+    /* Anime la transparence pendant 0,5 seconde */
+}
+/* ========================= */
+/* Conteneur de la carte */
+/* ========================= */
+
+.invite-card {
+    margin-top: 0px;
+    /* Espace entre le compteur et la carte */
+}
+/* ========================= */
+/* Contenu de la carte */
+/* ========================= */
+
+.card-content {
+    max-height: 0;
+    /* Hauteur nulle au départ */
+
+    overflow: hidden;
+    /* Cache le contenu qui dépasse */
+
+    opacity: 0;
+    /* Rend le contenu invisible */
+
+    background: orchid;
+    /* Fond blanc */
+
+    border-radius: 15px;
+    /* Coins arrondis */
+
+    padding: 0 20px;
+    /* Marges intérieures horizontales */
+
+    width: 800px;
+    /* Largeur de la carte */
+
+    margin: 20px auto;
+    /* Centre horizontalement */
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Ombre de la carte */
+
+    transition: all 0.5s ease;
+    /* Animation lors de l'ouverture */
+}
+
+.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+/* ========================= */
+/* Carte ouverte */
+/* ========================= */
+
+.invite-card.open .card-content {
+    max-height: none;
+    /* Hauteur maximale visible */
+
+    opacity: 1;
+    /* Rend la carte visible */
+
+    padding: 20px;
+    /* Ajoute des marges intérieures */
+}
+
+
+/* ========================= */
+/* Bouton flèche */
+/* ========================= */
+
+.arrow-btn {
+    width: 58px;
+    /* Largeur du bouton */
+
+    height: 58px;
+    /* Hauteur du bouton */
+
+    border: black;
+    /* Supprime la bordure */
+
+    border-radius: 50%;
+    /* Rend le bouton circulaire */
+
+    background: orchid;
+    /* Fond blanc */
+
+    color: #333;
+    /* Couleur de la flèche */
+
+    font-size: 26px;
+    /* Taille du symbole */
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    /* Ombre du bouton */
+
+    cursor: pointer;
+    /* Affiche une main au survol */
+
+    display: flex;
+    /* Utilise Flexbox */
+
+    align-items: center;
+    /* Centre verticalement la flèche */
+
+    justify-content: center;
+    /* Centre horizontalement la flèche */
+
+    margin: 18px auto 0;
+    /* Espace au-dessus et centrage */
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+    /* Animation des changements */
+
+    animation: bounce 1.8s infinite;
+    /* Animation de rebond permanente */
+
+}
+
+
+/* ========================= */
+/* Effet au survol */
+/* ========================= */
+
+.arrow-btn:hover {
+    transform: scale(1.12);
+    /* Agrandit légèrement le bouton */
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+    /* Ombre plus importante */
+
+    background: #f8f8f8;
+    /* Fond légèrement gris */
+}
+
+
+/* ========================= */
+/* Flèche après clic */
+/* ========================= */
+
+.arrow-btn.open {
+    animation: none;
+    /* Arrête le rebond */
+
+    transform: scale(0.6) translateY(40px) rotate(180deg);
+    /* rotate : Retourne la flèche */
+}
+
+
+/* ========================= */
+/* Animation de rebond */
+/* ========================= */
+
+@keyframes bounce {
+
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+        /* Position normale */
+    }
+
+    40% {
+        transform: translateY(-6px);
+        /* Monte de 6 pixels */
+    }
+
+    60% {
+        transform: translateY(-3px);
+        /* Monte légèrement */
+    }
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+}
+
+/*.scene.open c'est quand la scene a la classe open, .card la carte à faire tourner,  transform... c'est la cate se retourne'*/
+.scene.open .card{
+    transform: rotateY(180deg);
+}
+/*tansition animation douce transform la propriété qui change 0.8 durée de l'animation ease mouvement progressive -> ouveture fluide'*/
+.card{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d; /*garde les faces dans l'espace 3d pour rendre le verto et le recto bien séparé'*/
+}
+/* la profondeur sans cela il n'y a pas de effet 3D'*/
+.scene{
+    width: 800px;
+    height:300px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden; /* cache l'arrière de chaque face*/
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.back{
+    transform: rotateY(180deg);
+    background: fuchsia;
+}
+#t{
+    position: fixed;
+    top:16px;
+    right: 16px;
+    margin: 0;
+}
+.button{
+    padding: 12px 20px;
+    border : none;
+    border-radius: 8px;
+    background: white;
+    color: blue;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+/* ========================= */
+/* Carte ouverte : elle monte */
+/* ========================= */
+
+.invite-card.open {
+    transform: translateY(-150px); /*Y = monter*/
+    transition: transform 0.6s ease;
+}
+
+/* ========================= */
+/* Logo et compteur réduits  */
+/* ========================= */
+
+.logo.compact {
+    transform: scale(0.7) translateY(-120px); /*scale(0.6) réduire le logo*/
+    margin-bottom: -100px;
+}
+
+.countdown.compact {
+    transform: scale(0.5) translateY(-150px);
+    margin-bottom: 10px; /*réduit l’espace entre le compteur et la carte.*/
+}

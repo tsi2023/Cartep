@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Compte à rebours</title>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <audio id="music" loop>
+            <source src="03 Ben Bag Bag.mp3" type="audio/mpeg">
+        </audio>
+        <p id="t">
+            בסיעתא דשמיא
+        </p>
+        <div class="container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <div class="countdown" id="countdown"></div>
+            <div class="invite-card" id="inviteCard">
+                <button class="arrow-btn" id="arrowBtn" onclick="toggleCard()">↓</button>
+                <div class="card-content">
+                    <button class="button" id="btn" data-front="עברית" data-back="Français">
+                        עברית
+                    </button>
+                    <div class="scene" id="cardScene">
+                        <div class="card">
+                            <div class="face front">
+                                <div class="info">
+                                     Bonjour!
+                                    c?
+                                </div> 
+                            </div>
+                            <div class="face back">
+                                <p dir="rtl"><strong>עוד ישמע בהרי יהודה ובחוצות ירושלים<br>
+                                        קול ששון קול חתן וקול שמחה וקול כלה</strong><br><br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
